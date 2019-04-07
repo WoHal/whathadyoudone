@@ -1,18 +1,19 @@
 import React from 'react';
+import {Badge} from 'antd';
 
 import './index.scss';
 
 export default class DoneList extends React.Component {
     render() {
-        const data = this.props.data;
+        const {data, className} = this.props;
 
-        return typeof data === 'array' && data.length ? (
-            <ul className="events">
+        return data && data.length ? (
+            <ul className={'events ' + (className || '')}>
             {
-                arr.map((item, index) => {
+                data.map((item, index) => {
                     return (
                         <li key={index}>
-                            <Badge status="success" text={item + ' --> ' + item} />
+                            <Badge status="success" text={item} />
                         </li>
                     );
                 })
