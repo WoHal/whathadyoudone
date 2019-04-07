@@ -2,8 +2,10 @@ import {observable, action} from 'mobx';
 import axios from 'axios';
 
 class store {
+    @observable currentLoadedDate = '';
     @observable list = {};
     @action.bound init(date) {
+        this.currentLoadedDate = date;
         const time = date.split('-').slice(0, 2);
         axios.get(`http://localhost:8033/record/${time.join('/')}`)
             .then(res => res.data)

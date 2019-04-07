@@ -10,20 +10,25 @@ import DoneList from '../DoneList';
     init: store.init,
     list: store.list,
     editRecord: store.editRecord,
-    handleClickDate: store.handleClickDate
+    handleClickDate: store.handleClickDate,
+    currentLoadedDate: store.currentLoadedDate
 }))
 @observer
 export default class Record extends React.Component {
+    equalDate(diff1, diff2) {
+        return diff1.slice(0, 7) === diff2.slice(0, 7);
+    }
     dateCellRender(date) {
-        const day = date.format('YYYY-MM-DD').split('-')[2];
+        const dateFormated = date.format('YYYY-MM-DD').split('-');
+        const day = dateFormated[2];
         const data = this.props.list[day];
         const content = <DoneList data={data} />
 
-        return (
+        return this.equalDate(dateFormated, this.props.currentLoadedDate) ? (
             <Popover content={content}>
                 {content}
             </Popover>
-        );
+        ) : null;
     }
     // TODO
     monthCellRender(value) {
