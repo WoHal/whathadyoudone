@@ -1,6 +1,7 @@
 import {observable, action} from 'mobx';
 import axios from 'axios';
 
+// test server
 const DOMAIN = 'http://diamond5.wang:8033';
 class store {
     @observable currentLoadedDate = '';

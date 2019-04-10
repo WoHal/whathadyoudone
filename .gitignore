@@ -5,3 +5,6 @@ dist/
 yarn-error.log
 extension/popup.js
 extension/popup.css
+*.zip
+*.crx
+*.pem
