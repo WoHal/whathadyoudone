@@ -44,6 +44,11 @@ export default class Editor extends React.Component {
             creating: false
         });
     }
+    onDelete(data, index) {
+        this.setState({
+            list: this.state.list.filter((item, idx) => item != data && idx !== index)
+        });
+    }
     render() {
         const {list, creating} = this.state;
         return (
@@ -53,7 +58,7 @@ export default class Editor extends React.Component {
                 onOk={this.handleOK.bind(this)}
                 onCancel={this.handleCancel.bind(this)}
             >
-                <DoneList data={list} className="list" />
+                <DoneList data={list} className="list" onDelete={this.onDelete.bind(this)} />
                 {
                     creating ?
                         <Input.Search

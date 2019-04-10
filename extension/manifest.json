@@ -8,15 +8,7 @@
         "scripts": ["background.js"],
         "persistent": false
     },
-    "page_action": {
-        "default_icon": {
-            "64": "images/icon64.png",
-            "128": "images/icon128.png",
-            "256": "images/icon256.png"
-        },
-        "default_title": "What You Had Done",
-        "default_popup": "popup.html"
-    },
+    "browser_action": {},
     "icons": {
         "64": "images/icon64.png",
         "128": "images/icon128.png",

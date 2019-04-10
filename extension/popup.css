@@ -3278,6 +3278,11 @@ span.ant-radio + * {
 /* stylelint-disable no-duplicate-selectors */
 /* stylelint-disable */
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
+
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-badge {
   box-sizing: border-box;
   margin: 0;
@@ -3519,6 +3524,14 @@ span.ant-radio + * {
   padding: 0;
   height: 78px;
   overflow: hidden; }
+  .events .item {
+    position: relative;
+    z-index: 1;
+    padding-right: 20px; }
+  .events .anticon-close {
+    position: absolute;
+    right: 14px;
+    margin-top: 3px; }
 
 /* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
 /* stylelint-disable no-duplicate-selectors */

@@ -19,12 +19,13 @@ export default class Record extends React.Component {
         return diff1.slice(0, 7) === diff2.slice(0, 7);
     }
     dateCellRender(date) {
-        const dateFormated = date.format('YYYY-MM-DD').split('-');
+        const dateStr = date.format('YYYY-MM-DD');
+        const dateFormated = dateStr.split('-');
         const day = dateFormated[2];
         const data = this.props.list[day];
         const content = <DoneList data={data} />
 
-        return this.equalDate(dateFormated, this.props.currentLoadedDate) ? (
+        return this.equalDate(dateStr, this.props.currentLoadedDate) ? (
             <Popover content={content}>
                 {content}
             </Popover>

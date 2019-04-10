@@ -4,4 +4,16 @@
     padding: 0;
     height: 78px;
     overflow: hidden;
+
+    .item {
+        position: relative;
+        z-index: 1;
+        padding-right: 20px;
+    }
+
+    .anticon-close {
+        position: absolute;
+        right: 14px;
+        margin-top: 3px;
+    }
 }

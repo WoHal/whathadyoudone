@@ -1,13 +1,14 @@
 import {observable, action} from 'mobx';
 import axios from 'axios';
 
+const DOMAIN = 'http://diamond5.wang:8033';
 class store {
     @observable currentLoadedDate = '';
     @observable list = {};
     @action.bound init(date) {
         this.currentLoadedDate = date;
         const time = date.split('-').slice(0, 2);
-        axios.get(`http://localhost:8033/record/${time.join('/')}`)
+        axios.get(`${DOMAIN}/record/${time.join('/')}`)
             .then(res => res.data)
             .then(res => {
                 if (res.status === 0) {
@@ -20,7 +21,7 @@ class store {
     @observable editingData = {};
     @observable editorVisible = false;
     @action.bound updateRecord(data) {
-        axios.post(`http://localhost:8033/record/${this.editingTime.replace(/-/g, '/')}`, data)
+        axios.post(`${DOMAIN}/record/${this.editingTime.replace(/-/g, '/')}`, data)
             .then(res => res.data)
             .then(res => {
                 this.hideEditor();
